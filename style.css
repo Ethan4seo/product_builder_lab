@@ -1,19 +1,39 @@
+:root {
+  --background-color: linear-gradient(to right, #2c3e50, #4ca1af);
+  --text-color: white;
+  --container-bg-color: rgba(255, 255, 255, 0.1);
+  --button-bg-color: #4CAF50;
+  --button-hover-bg-color: #45a049;
+  --button-disabled-bg-color: #cccccc;
+  --box-shadow-color: rgba(0, 0,0, 0.2);
+}
+
+.dark-mode {
+  --background-color: linear-gradient(to right, #0a0a0a, #333333);
+  --text-color: #e0e0e0;
+  --container-bg-color: rgba(0, 0, 0, 0.3);
+  --button-bg-color: #34495e;
+  --button-hover-bg-color: #2c3e50;
+  --button-disabled-bg-color: #555555;
+  --box-shadow-color: rgba(255, 255, 255, 0.1);
+}
+
 body {
   font-family: 'Helvetica Neue', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to right, #2c3e50, #4ca1af);
-  color: white;
+  background: var(--background-color);
+  color: var(--text-color);
   text-align: center;
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--container-bg-color);
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px var(--box-shadow-color);
   backdrop-filter: blur(10px);
 }
 
@@ -26,7 +46,7 @@ h1 {
   padding: 15px 30px;
   font-size: 1.2em;
   cursor: pointer;
-  background-color: #4CAF50;
+  background-color: var(--button-bg-color);
   color: white;
   border: none;
   border-radius: 8px;
@@ -35,12 +55,12 @@ h1 {
 }
 
 #generate-btn:hover {
-    background-color: #45a049;
+    background-color: var(--button-hover-bg-color);
     transform: scale(1.05);
 }
 
 #generate-btn:disabled {
-    background-color: #cccccc;
+    background-color: var(--button-disabled-bg-color);
     cursor: not-allowed;
 }
 
@@ -92,4 +112,21 @@ h1 {
         height: 50px;
         font-size: 1.5em;
     }
+}
+
+#theme-toggle-btn {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#theme-toggle-btn:hover {
+    background-color: var(--button-hover-bg-color);
+    transform: scale(1.05);
 }
