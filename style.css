@@ -1,9 +1,9 @@
 :root {
-  --background-color: linear-gradient(to right, #2c3e50, #4ca1af);
-  --text-color: white;
-  --container-bg-color: rgba(255, 255, 255, 0.1);
-  --button-bg-color: #4CAF50;
-  --button-hover-bg-color: #45a049;
+  --background-color: linear-gradient(to right, #a8dadc, #457b9d); /* Light blue gradient */
+  --text-color: black; /* Changed to black for better contrast on light blue */
+  --container-bg-color: rgba(255, 255, 255, 0.7); /* Slightly more opaque for light mode */
+  --button-bg-color: #1d3557; /* Darker button for light mode */
+  --button-hover-bg-color: #214f77;
   --button-disabled-bg-color: #cccccc;
   --box-shadow-color: rgba(0, 0,0, 0.2);
 }
@@ -27,6 +27,7 @@ body {
   background: var(--background-color);
   color: var(--text-color);
   text-align: center;
+  position: relative; /* Needed for absolute positioning of the button */
 }
 
 .container {
@@ -115,15 +116,18 @@ h1 {
 }
 
 #theme-toggle-btn {
+  position: absolute; /* Position the button */
+  top: 20px; /* From the top */
+  right: 20px; /* From the right */
   padding: 10px 20px;
   font-size: 1em;
   cursor: pointer;
   background-color: var(--button-bg-color);
-  color: var(--text-color);
+  color: var(--text-color); /* Use text color from theme */
   border: none;
   border-radius: 5px;
-  margin-bottom: 20px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.2s, color 0.3s; /* Add color to transition */
+  z-index: 100; /* Ensure button is above other content */
 }
 
 #theme-toggle-btn:hover {

@@ -3,6 +3,14 @@ const numbersContainer = document.getElementById('numbers-container');
 const themeToggleBtn = document.getElementById('theme-toggle-btn');
 const body = document.body;
 
+function updateToggleButtonText() {
+  if (body.classList.contains('dark-mode')) {
+    themeToggleBtn.textContent = '화이트모드';
+  } else {
+    themeToggleBtn.textContent = '다크모드';
+  }
+}
+
 // Apply saved theme on load
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
@@ -12,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Default to light mode if no theme is saved
     body.classList.add('light-mode');
   }
+  updateToggleButtonText(); // Set initial button text
 });
 
 themeToggleBtn.addEventListener('click', () => {
@@ -24,6 +33,7 @@ themeToggleBtn.addEventListener('click', () => {
     body.classList.add('dark-mode');
     localStorage.setItem('theme', 'dark-mode');
   }
+  updateToggleButtonText(); // Update button text after theme change
 });
 
 generateBtn.addEventListener('click', () => {
