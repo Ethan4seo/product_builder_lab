@@ -134,3 +134,88 @@ h1 {
     background-color: var(--button-hover-bg-color);
     transform: scale(1.05);
 }
+
+/* Navigation styles */
+nav {
+  margin-top: -15px; /* Adjust as needed to position it correctly */
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+/* Form styles */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+}
+
+.dark-mode .form-group input[type="text"],
+.dark-mode .form-group input[type="email"],
+.dark-mode .form-group textarea {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #eee;
+  border: 1px solid #555;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+#submit-btn {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#submit-btn:hover {
+    background-color: var(--button-hover-bg-color);
+    transform: scale(1.05);
+}
+
+#form-status {
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
